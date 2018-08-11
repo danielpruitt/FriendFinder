@@ -159,6 +159,7 @@
 
                             <h3> Question 10</h3>
                             <p>You'd don't really want to find another friend, but you're being made to do this.</p>
+                            
                             <select class="custom-select" id="q10">
                                 <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
@@ -186,7 +187,7 @@
     </div>
 
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" id="friendModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -205,6 +206,71 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            //for the modal
+            $(".modal").modal({
+                dismissable: true,
+                opacity: .5,
+                inDuration: 300,
+                outDuration: 200,
+                startingTop: "4%",
+                endingTop: "10%"
+            });
+        });
+
+        //ON click for the form submission
+        $("#submitAll").on("click", function(){
+            event.preventDefault();
+
+            function validateForm(){
+                var valid = true;
+                $("form-control").each(function(){
+                    if ($(this).val()===""){
+                        valid = false;
+                    };
+                });
+                $("select").each(function(){
+                    if ($(this).val()===""){
+                        valid = false;
+                    }
+                    else{valid = true};
+                });
+                return valid;
+            }
+            //place answers in object for friends.js 
+            if (validateForm() === true){
+                var userInput = {
+                    name: $("#nameInput").val().trim(),
+                    photo: $("#imageLink").val().trim(),
+                    scores: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim(),
+                    ]
+                };
+                //post to the the friends API and to open the modal
+                $.post("/api/friends", userInput, function(data){
+                    console.log("New Friend has been posted.")
+                    // $("bestFriendName").text(data.name);
+                    // $("#bestFriendImg").attr("src", data.photo);
+                    // $("bestFriendImg").addClass("responsive-img");
+                    // $("#friendModal").modal("open");
+                });
+            };
+            validateForm();
+        });
+    
+    </script>
 </body>
 
 </html>
