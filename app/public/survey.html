@@ -19,6 +19,10 @@
             <h1>Friend Finder</h1>
             <h3>The best place to find friends....</h3>
             <h4>...kinda</h4>
+            <a href="/">
+                <button class="btn btn-success btn-lg">
+                    <span class="fa fa-home"></span> Home</button>
+            </a>
         </div>
 
         <div class="row">
@@ -35,19 +39,20 @@
                         <form>
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="name" class="form-control" id="nameInput" required>
+                                <input type="name" class="form-control" id="nameInput" class="validate" required>
                             </div>
                             <div class="form-group">
                                 <label for="imageLink">Image Link</label>
-                                <input type="imageLink" class="form-control" id="imageLink" required>
+                                <input type="imageLink" class="form-control" id="imageLink" class="validate" required>
                                 <small class="form-text text-muted">Please submit a valid image link.</small>
                             </div>
                         </form>
                         <div>
                             <br>
                             <h3> Question 1</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You always are looking for the next thing to do.</p>
+                            <select class="custom-select" id="q1">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -55,9 +60,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 2</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You hate change.</p>
+                            <select class="custom-select" id="q2">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -65,9 +72,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 3</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You don't know what to do with your hands.</p>
+                            <select class="custom-select" id="q3">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -75,9 +84,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 4</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You're always trying to find where you put those stupid keys.</p>
+                            <select class="custom-select" id="q4">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -85,9 +96,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 5</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You found love in a hopeless place.</p>
+                            <select class="custom-select" id="q5">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -95,9 +108,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 6</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You prefer a movie and a bowl of cereal on a Saturday night instead of going out. </p>
+                            <select class="custom-select" id="q6">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -105,9 +120,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 7</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You'd rather be at the gym.</p>
+                            <select class="custom-select" id="q7">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -115,9 +132,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 8</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>"Why am I so hungry?" is a constant question you ask yourself.</p>
+                            <select class="custom-select" id="q8">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -125,9 +144,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 9</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>Music is what soothes your soul. Even if you like polka or German Bagpipe Metal.</p>
+                            <select class="custom-select" id="q9">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -135,9 +156,11 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select>
                             <br>
+
                             <h3> Question 10</h3>
-                            <p>Make some questions up</p>
-                            <select class="custom-select">
+                            <p>You'd don't really want to find another friend, but you're being made to do this.</p>
+                            <select class="custom-select" id="q10">
+                                <option selected disabled>Please make a selection.</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -148,14 +171,40 @@
                         </div>
 
                         <div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="submitAll" data-target="friendModal">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <div class="container">
+        <a href="/api/friends"> | API Friends List |</a>
+        <a href="https://github.com/danielpruitt/FriendFinder" target="blank"> | GithHub |</a>
+    </div>
 
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Here's your new friend!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your new friend is...</p>
+                    <h4 id="newFriend"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

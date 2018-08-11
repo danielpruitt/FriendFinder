@@ -1,20 +1,15 @@
-// Dependencies 
-
-var path = require("path");
+//Dependencies
 
 var friends = require("../data/friends.js");
+// Routes 
 
+module.exports = function(app){
+    app.get("/api/friends", function (req, res){
+        res.json(friends);
+    });
 
-//GET route
-app.get("/api/friends", function (req,res){
-    res.send("FriendFinder API")
-    return res.json(friends.friendOne)
-});
-
-
-//POST route
-
-app.post("/api/friends", function(reg, res){
-
-
-});
+    app.post("/api/friends", function (req,res){
+        friends.push(req.body);
+        res.json(true);
+    });
+};
