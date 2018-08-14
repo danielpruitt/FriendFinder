@@ -1,7 +1,6 @@
-//Dependencies
+//require the friends.js since the friends are stored in the object there.
 
 var friends = require("../data/friends.js");
-// Routes 
 
 module.exports = function(app){
     app.get("/api/friends", function (req, res){
@@ -9,9 +8,6 @@ module.exports = function(app){
     });
 
     app.post("/api/friends", function (req,res){
-        // friends.push(req.body);
-        // res.json(true);
-
         var userInput = req.body;
         var userScores = userInput.scores;
 
@@ -20,14 +16,18 @@ module.exports = function(app){
 
         var totalDifference = 1000;
 
-        for (var i =0; i < friends.length; i++){
+        // for loop that will loop through each friend in the object
+        for (var i = 0; i < friends.length; i++){
             console.log(friends[i]);
             //difference starts at 0 before comparing to a total
             var diff = 0;
-            for(var j = 0; j<userScores.length;j++){
+            // this loop will do the math between the scores of the new user gave and the friend that is already in the object
+            for(var j = 0; j < userScores.length;j++){
+                //Math.abs was utilized so that the difference is the absolute value between userScores and the friends.scores
                 diff += Math.abs(friends[i].scores[j] - userScores[j]);
             };
 
+            // diff is less than total difference of each friend in the object to determine the best friend, which is then put into the modal.
             if (diff < totalDifference) { 
                 totalDifference = diff;
                 bestFriendName = friends[i].name;
